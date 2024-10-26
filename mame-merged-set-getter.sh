@@ -402,3 +402,21 @@ else
    echo
    exit 1
 fi
+
+#mameset 270
+005.zip
+100lions.zip
+10yard.zip
+110dance.zip
+11beat.zip
+15lions.zip
+18w.zip
+18wheelr.zip
+1941.zip
+1942.zip
+1943.zip
+1943kai.zip
+1943mii.zip
+1944.zip
+1945kiii.zip
+19xx.zip

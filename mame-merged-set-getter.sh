@@ -35,7 +35,7 @@ INSTALL="false"
 INIFILE="$(pwd)/update_mame-getter.ini"
 
 CURL_RETRY="${CURL_RETRY:---connect-timeout 15 --max-time 300 --retry 3 --retry-delay 5 --show-error}"
-SSL_SECURITY_OPTION="${SSL_SECURITY_OPTION:---insecure}"
+SSL_SECURITY_OPTION="${SSL_SECURITY_OPTION:--O}"
 
 rm /tmp/mame_getter_errors 2> /dev/null || true
 #####INI FILES VARS######

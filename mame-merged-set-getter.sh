@@ -33,6 +33,7 @@ ROMMAME="/media/fat/games/mame"
 MRADIR="/media/fat/_Arcade"
 INSTALL="false"
 INIFILE="$(pwd)/update_mame-getter.ini"
+source $(pwd)/update_mame-getter.ini
 
 CURL_RETRY="${CURL_RETRY:---connect-timeout 15 --max-time 300 --retry 3 --retry-delay 5 --show-error}"
 SSL_SECUPTION="${SSL_SECURITY_OPTION:--O}"
@@ -193,24 +194,24 @@ download_mame_roms_from_mra() {
          case "$VER" in
 
             '0268')
-                  curl ${CURL_RETRY} ${SSL_SECURITY_OPTION} --location -o "${ZIP_PATH}" "https://bda.retroroms.info:82/downloads/mame/mame-0268/${f}"
+                  curl ${CURL_RETRY} ${SSL_SECURITY_OPTION} -u $user --location -o "${ZIP_PATH}" "https://bda.retroroms.info:82/downloads/mame/mame-0268/${f}"
                      ;;	  
             '0269')
-                  curl ${CURL_RETRY} ${SSL_SECURITY_OPTION} --location -o "${ZIP_PATH}" "https://bda.retroroms.info:82/downloads/mame/mame-0269/${f}"
+                  curl ${CURL_RETRY} ${SSL_SECURITY_OPTION} -u $user --location -o "${ZIP_PATH}" "https://bda.retroroms.info:82/downloads/mame/mame-0269/${f}"
                      ;;	  
             '0270')
-                  curl ${CURL_RETRY} ${SSL_SECURITY_OPTION} --location -o "${ZIP_PATH}" "https://bda.retroroms.info:82/downloads/mame/mame-0270/${f}"
+                  curl ${CURL_RETRY} ${SSL_SECURITY_OPTION} -u $user --location -o "${ZIP_PATH}" "https://bda.retroroms.info:82/downloads/mame/mame-0270/${f}"
                      ;;	  
             *)
                   echo "MAME version not listed in MRA or there is no download source for the version, downloading from .270 set"
-                  curl ${CURL_RETRY} ${SSL_SECURITY_OPTION} --location -o "${ZIP_PATH}" "https://bda.retroroms.info:82/downloads/mame/mame-0270-full/${f}"
+                  curl ${CURL_RETRY} ${SSL_SECURITY_OPTION} -u $user --location -o "${ZIP_PATH}" "https://bda.retroroms.info:82/downloads/mame/mame-0270-full/${f}"
                      ;;
          esac
 
 	 # Fallback
          if [ ! -s "$ROMMAME"/"${f}" ] ; then
              echo "MAME rom not found on $VER set, downloading from .270 set"
-             curl ${CURL_RETRY} ${SSL_SECURITY_OPTION} --location -o "${ZIP_PATH}" "https://bda.retroroms.info:82/downloads/mame/mame-0270-full/${f}"
+             curl ${CURL_RETRY} ${SSL_SECURITY_OPTION} -u $user --location -o "${ZIP_PATH}" "https://bda.retroroms.info:82/downloads/mame/mame-0270-full/${f}"
 	 fi
 
          #####CLEAN UP######

@@ -22,14 +22,14 @@
 ######INFO#####
 if [ -d "/mnt/a/fat/_Arcade/mame" ] ; then
    echo
-   echo "INFO: As of 6/11/2020 the default directory has been changed to /media/fat/games/mame"
-   echo "INFO: Please move all roms from /media/fat/_Arcade/mame/* to /media/fat/games/mame/"
+   echo "INFO: As of 6/11/2020 the default directory has been changed to /media/fat/Games/mame"
+   echo "INFO: Please move all roms from /media/fat/_Arcade/mame/* to /media/fat/Games/mame/"
    echo "INFO: You may still set a custom ROMMAME path in update_mame-getter.ini if needed"
    sleep 5
 fi
 ######VARS#####
 
-ROMMAME="/media/fat/games/mame"
+ROMMAME="/media/fat/Games/mame"
 MRADIR="/media/fat/_Arcade"
 INSTALL="false"
 INIFILE="$(pwd)/update_mame-getter.ini"
@@ -76,14 +76,14 @@ if [ `grep -c "CURL_RETRY=" "${INIFILE_FIXED}"` -gt 0 ]
 fi 2>/dev/null
 
 GAMESDIR_FOLDERS=( \
-    /media/usb0/games \
-    /media/usb1/games \
-    /media/usb2/games \
-    /media/usb3/games \
-    /media/usb4/games \
-    /media/usb5/games \
-    /media/fat/cifs/games \
-    /media/fat/games \
+    /media/usb0/Games \
+    /media/usb1/Games \
+    /media/usb2/Games \
+    /media/usb3/Games \
+    /media/usb4/Games \
+    /media/usb5/Games \
+    /media/fat/cifs/Games \
+    /media/fat/Games \
 )
 
 GETTER_DO()
@@ -107,7 +107,7 @@ GET_SYSTEM_FOLDER_GAMESDIR=
 GET_SYSTEM_FOLDER_RESULT=
 GET_SYSTEM_FOLDER()
 {
-    GET_SYSTEM_FOLDER_GAMESDIR="/media/fat/games"
+    GET_SYSTEM_FOLDER_GAMESDIR="/media/fat/Games"
     GET_SYSTEM_FOLDER_RESULT=
     local SYSTEM="${1}"
     for folder in ${GAMESDIR_FOLDERS[@]}

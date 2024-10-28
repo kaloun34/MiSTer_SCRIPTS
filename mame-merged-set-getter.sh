@@ -193,30 +193,30 @@ download_mame_roms_from_mra() {
 
          case "$VER" in
             '0209')
-                  curl ${CURL_RETRY} ${SSL_SECURITY_OPTION} -u $user --location -o "${ZIP_PATH}" "https://archive.org/download/MAME209RomsOnlyMerged/${f}"
+                  curl ${CURL_RETRY} ${SSL_SECURITY_OPTION} --fail --location -o "${ZIP_PATH}" "https://archive.org/download/MAME209RomsOnlyMerged/${f}"
                      ;;
             '0216')
-                  curl ${CURL_RETRY} ${SSL_SECURITY_OPTION} -u $user --location -o "${ZIP_PATH}" "https://archive.org/download/MAME216RomsOnlyMerged/${f}"
+                  curl ${CURL_RETRY} ${SSL_SECURITY_OPTION} --fail --location -o "${ZIP_PATH}" "https://archive.org/download/MAME216RomsOnlyMerged/${f}"
                      ;;
 
             '0220')
-                  curl ${CURL_RETRY} ${SSL_SECURITY_OPTION} -u $user --location -o "${ZIP_PATH}" "https://archive.org/download/MAME220RomsOnlyMerged/${f}"
+                  curl ${CURL_RETRY} ${SSL_SECURITY_OPTION} --fail --location -o "${ZIP_PATH}" "https://archive.org/download/MAME220RomsOnlyMerged/${f}"
                      ;;
 
             '0221')
-                  curl ${CURL_RETRY} ${SSL_SECURITY_OPTION} -u $user --location -o "${ZIP_PATH}" "https://archive.org/download/mame-0.221-roms-merged/${f}"
+                  curl ${CURL_RETRY} ${SSL_SECURITY_OPTION} --fail --location -o "${ZIP_PATH}" "https://archive.org/download/mame-0.221-roms-merged/${f}"
                      ;;
 
             '0222')
-                  curl ${CURL_RETRY} ${SSL_SECURITY_OPTION} -u $user --location -o "${ZIP_PATH}" "https://archive.org/download/MAME222RomsOnlyMerged/${f}"
+                  curl ${CURL_RETRY} ${SSL_SECURITY_OPTION} --fail --location -o "${ZIP_PATH}" "https://archive.org/download/MAME222RomsOnlyMerged/${f}"
                      ;;                     
 
             '0224')
-                  curl ${CURL_RETRY} ${SSL_SECURITY_OPTION} -u $user --location -o "${ZIP_PATH}" "https://archive.org/download/MAME_0.224_ROMs_merged/${f}"
+                  curl ${CURL_RETRY} ${SSL_SECURITY_OPTION} --fail --location -o "${ZIP_PATH}" "https://archive.org/download/MAME_0.224_ROMs_merged/${f}"
                      ;;
 
             '0251')
-                  curl ${CURL_RETRY} ${SSL_SECURITY_OPTION} -u $user --location -o "${ZIP_PATH}" "https://archive.org/download/mame251/${f}"
+                  curl ${CURL_RETRY} ${SSL_SECURITY_OPTION} --fail --location -o "${ZIP_PATH}" "https://archive.org/download/mame251/${f}"
                      ;;
 
             *)

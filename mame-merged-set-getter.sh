@@ -221,14 +221,14 @@ download_mame_roms_from_mra() {
 
             *)
                   echo "MAME version not listed in MRA or there is no download source for the version, downloading from .270 set"
-                  curl ${CURL_RETRY} ${SSL_SECURITY_OPTION} -u $user --location -o "${ZIP_PATH}" "https://bda.retroroms.info:82/downloads/mame/mame-0270-full/${f}"
+                  #curl ${CURL_RETRY} ${SSL_SECURITY_OPTION} -u $user --location -o "${ZIP_PATH}" "https://bda.retroroms.info:82/downloads/mame/mame-0270-full/${f}"
                      ;;
          esac
 
 	 # Fallback
          if [ ! -s "$ROMMAME"/"${f}" ] ; then
              echo "MAME rom not found on $VER set, downloading from .270 set"
-             curl ${CURL_RETRY} ${SSL_SECURITY_OPTION} -u $user --location -o "${ZIP_PATH}" "https://bda.retroroms.info:82/downloads/mame/mame-0270-full/${f}"
+             #curl ${CURL_RETRY} ${SSL_SECURITY_OPTION} -u $user --location -o "${ZIP_PATH}" "https://bda.retroroms.info:82/downloads/mame/mame-0270-full/${f}"
 	 fi
 
          #####CLEAN UP######

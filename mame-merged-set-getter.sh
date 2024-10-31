@@ -221,7 +221,8 @@ download_mame_roms_from_mra() {
 
             *)
                   echo "MAME version not listed in MRA or there is no download source for the version, downloading from .224 set"
-		  curl ${CURL_RETRY} ${SSL_SECURITY_OPTION} --fail --location -o "${ZIP_PATH}" "https://archive.org/download/mame0.224/${f}"
+		  curl ${CURL_RETRY} ${SSL_SECURITY_OPTION} --fail --location -o "${ZIP_PATH}" " #curl ${CURL_RETRY} ${SSL_SECURITY_OPTION} --fail --location -o "${ZIP_PATH}" "https://myrient.erista.me/files/Internet%20Archive/chadmaster/mame-merged/mame-merged/${f}"
+		  #curl ${CURL_RETRY} ${SSL_SECURITY_OPTION} --fail --location -o "${ZIP_PATH}" "https://archive.org/download/mame0.224/${f}"
                   #curl ${CURL_RETRY} ${SSL_SECURITY_OPTION} -u $user --location -o "${ZIP_PATH}" "https://bda.retroroms.info:82/downloads/mame/mame-0270-full/${f}"
                      ;;
          esac
@@ -229,7 +230,8 @@ download_mame_roms_from_mra() {
 	 # Fallback
          if [ ! -s "$ROMMAME"/"${f}" ] ; then
              echo "MAME rom not found on $VER set, downloading from .224 set"
-	     curl ${CURL_RETRY} ${SSL_SECURITY_OPTION} --fail --location -o "${ZIP_PATH}" "https://archive.org/download/mame0.224/${f}"
+	     curl ${CURL_RETRY} ${SSL_SECURITY_OPTION} --fail --location -o "${ZIP_PATH}" " #curl ${CURL_RETRY} ${SSL_SECURITY_OPTION} --fail --location -o "${ZIP_PATH}" "https://myrient.erista.me/files/Internet%20Archive/chadmaster/mame-merged/mame-merged/${f}"
+	     #curl ${CURL_RETRY} ${SSL_SECURITY_OPTION} --fail --location -o "${ZIP_PATH}" "https://archive.org/download/mame0.224/${f}"
              #curl ${CURL_RETRY} ${SSL_SECURITY_OPTION} -u $user --location -o "${ZIP_PATH}" "https://bda.retroroms.info:82/downloads/mame/mame-0270-full/${f}"
 	 fi
 

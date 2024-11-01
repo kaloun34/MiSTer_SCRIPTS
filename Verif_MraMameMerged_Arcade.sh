@@ -40,7 +40,7 @@ for MRA in *.mra; do
             for MAME in "${MAMES[@]}"; do
                 MAME_FOUND=$(find "$DIRM" "$DIRHM" -maxdepth 1 -iname "$MAME")
 
-                if [ -n "$MAME_FOUND" ]; then
+                if [ -n "$MAME_FOUND" ] && [[ "$MAME_FOUND" != *"qsound.zip"* ]] && [[ "$MAME_FOUND" != *"namco"* ]]; then
                     ((compteur++))
                     MAMEOK+=("${MAME_FOUND#/media/fat/Games/}")
                 fi

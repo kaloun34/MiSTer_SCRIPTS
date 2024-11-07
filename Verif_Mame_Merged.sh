@@ -20,7 +20,7 @@ search() {
     if [ "$error_code" -eq 0 ]; then
       echo "Le fichier $MAME existe !!"
     else
-      echo "$MAME n'est a priori pas un merged" >> $MIST/MameMerged_NOK.txt
+      echo "$MAME n'est a priori pas une rom merged" >> $MIST/MameMerged_NOK.txt
     fi
   done
 }

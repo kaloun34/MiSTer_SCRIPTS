@@ -16,7 +16,8 @@ for core in $DIRC/*.rbf;do
 	#CORE=${CORE%%_*} #supprime tout à partir de _ du nom du fichier
 	CORE=${CORE%?????????????*} #supprimer les 8 derniers caractères du nom de fichier + l'extension
 	CORE=$(echo $CORE | tr "A-Z" "a-z")
-	CORE=\<rbf\>$CORE\<\/rbf\>
+	#CORE=\<rbf\>$CORE\<\/rbf\>
+	CORE=$CORE\<\/rbf\>
 	MRASearch
 	if [ $? -eq 1 ]; then
 		echo $core OK

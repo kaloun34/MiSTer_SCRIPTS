@@ -19,10 +19,11 @@ for MRA in *.mra; do
         break  # Sortir si aucun fichier n'est trouvé
     fi
      # Recherche de la ligne qui commence par <rbf>
-     ligne=$(grep "<rbf>" "$MRA")
+     ligne=$(grep "<\/rbf>" "$MRA")
 	if [ -n "$ligne" ]; then
 		# Si une ligne est trouvée, récupération du nom du core entre les balises <rbf>
-        CORE=$(echo $ligne | sed -n 's/.*<rbf>\(.*\)<\/rbf>.*/\1/p')
+        #CORE=$(echo $ligne | sed -n 's/.*<rbf>\(.*\)<\/rbf>.*/\1/p')
+        CORE=$(echo "$ligne" | sed -n 's/.*>\(.*\)<\/rbf>.*/\1/p')
         COROK=$(find "$DIRC" -maxdepth 1 -iname "$CORE*")
         if [ -n "$COROK" ]; then
 			echo "$CORE OK"

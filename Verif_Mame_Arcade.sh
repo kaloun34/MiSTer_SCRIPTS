@@ -47,6 +47,6 @@ fi
 echo "Ces ROMS ne semblent pas être utilisés par un MRA Arcade:">"$MIST"/Mame_NOK.txt
 echo "">>"$MIST"/Mame_NOK.txt
 echo .
-echo "Verification des Cores en cours ...."
+echo "Verification des ROMS en cours ...."
 echo .
 renomme

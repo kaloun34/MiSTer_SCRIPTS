@@ -48,7 +48,7 @@ if [ -f "$MIST"/MRA_NOK.txt ]; then
     rm "$MIST"/MRA_NOK.txt
 fi
 
-echo "Ces MRA du dossier /_Arcade pointent sur un Core qui n'existe pas dans /_Arcade/cores:">"$MIST"/MRA_NOK.txt
+echo "Ces MRA pointent sur un Core qui n'existe pas dans /_Arcade/cores:">"$MIST"/MRA_NOK.txt
 echo "">>"$MIST"/MRA_NOK.txt
 echo .
 echo "Verification des MRA en cours ...."

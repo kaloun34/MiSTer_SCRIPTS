@@ -33,6 +33,9 @@ for MRA in "$DIRA"/**/*.mra ;do
 		return 1
 	fi
 done
+
+shopt -u nullglob globstar
+return 0	
 }
 
 #Début du script
@@ -40,7 +43,7 @@ if [ -f "$MIST"/Cores_NOK.txt ]; then
 	rm "$MIST"/Cores_NOK.txt
 fi
 
-echo "Ces Cores du dossier /_Arcade/cores ne semblent pas être utilisés par un MRA Arcade:">"$MIST"/Cores_NOK.txt
+echo "Ces Cores ne semblent pas être utilisés par un MRA Arcade:">"$MIST"/Cores_NOK.txt
 echo "">>"$MIST"/Cores_NOK.txt
 echo .
 echo "Verification des Cores en cours ...."

@@ -8,7 +8,6 @@
 MIST="/media/fat"
 DIRC="/media/fat/_Arcade/cores"
 DIRA="/media/fat/_Arcade"
-Test=0
 
 
 # Renomme du core

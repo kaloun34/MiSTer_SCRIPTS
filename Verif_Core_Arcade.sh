@@ -3,7 +3,7 @@
 ### Tonton ###
 # (10/01/2023)
 #
-# Vérifie si les Cores du dossier /arcade/cores sont utilisés par un MRA de /_Arcade
+# Vérifie si les Cores du dossier /_Arcade/cores sont utilisés par un MRA de /_Arcade
 
 MIST="/media/fat"
 DIRC="/media/fat/_Arcade/cores"
@@ -43,6 +43,6 @@ fi
 echo "Ces Cores du dossier /_Arcade/cores ne semblent pas être utilisés par un MRA Arcade:">"$MIST"/Cores_NOK.txt
 echo "">>"$MIST"/Cores_NOK.txt
 echo .
-echo "Verification des cores en cours ...."
+echo "Verification des Cores en cours ...."
 echo .
 renomme

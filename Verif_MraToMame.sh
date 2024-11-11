@@ -9,15 +9,15 @@ DIRHM="/media/fat/Games/hbmame"
 DIRA="/media/fat/_Arcade"
 DIRC="/media/fat/_Arcade/cores"
 
-shopt -s nullglob  # Cette option empêche les jokers vides de produire des noms de fichiers littéraux.
+shopt -s nullglob  # Cette option empÃªche les jokers vides de produire des noms de fichiers littÃ©raux.
 
 # Extraction du core
 core() {
 cd "$1"
 for MRA in *.mra; do
     if [ ! -f "$MRA" ]; then
-        echo "Aucun fichier .mra trouvé dans le répertoire."
-        break  # Sortir si aucun fichier n'est trouvé
+        echo "Aucun fichier .mra trouvÃ© dans le rÃ©pertoire."
+        break  # Sortir si aucun fichier n'est trouvÃ©
     fi
 
     # Recherche de la ligne qui commence par <rom
@@ -26,7 +26,7 @@ for MRA in *.mra; do
 
 	if [ -n "$ligne" ]; then
         if ! echo "$ligne" | grep -qE 'zip=["'\''"]([^"'\''"]*\.zip)'; then
-            echo "Aucun fichier zip trouvé pour $DIRMRA/$MRA">>"$MIST/MRAMAME_NOK.txt"
+            echo "Aucun fichier zip trouvÃ© pour $DIRMRA/$MRA">>"$MIST/MRAMAME_NOK.txt"
             continue
         fi
 
@@ -60,7 +60,7 @@ find "$DIRA" -type d | while read -r DIRMRA; do
 done
 }
 
-#Début du script
+#DÃ©but du script
 if [ -f $MIST/MRAMAME_NOK.txt ]; then
     rm $MIST/MRAMAME_NOK.txt
 fi

@@ -36,7 +36,8 @@ main() {
 
 # Extraction du core
 core() {
-	cd "$1" || exit
+	local dirmra=$1
+	cd "$dirmra" || exit
 	for mra in *.mra; do
 		if [ ! -f "$mra" ]; then
 			printf "Aucun fichier .mra trouvé dans le répertoire.\n"
@@ -69,7 +70,7 @@ core() {
 				done
 
 				if [ "$compteur" -gt 1 ]; then
-					echo "Le MRA merged:  \"$(echo "$1" | sed 's|^/media/fat||')/$MRA\"  pointe sur $compteur fichiers mames:  ${mameok[@]}" >> "$MIST/$OUT"
+					echo "Le MRA :  \"$(echo "$dirmra" | sed 's|^/media/fat||')/$mra\"  pointe sur $compteur fichiers mames:  ${mameok[@]}" >> "$MIST/$OUT"
 				fi
 			fi
 		fi
@@ -78,8 +79,8 @@ core() {
 
 # Parcours des MRA
 MRASearch () {
-	find "$DIRA" -type d | while read -r DIRMRA; do
-		core "$DIRMRA"
+	find "$DIRA" -type d | while read -r dirmra; do
+		core "$dirmra"
 	done
 }
 

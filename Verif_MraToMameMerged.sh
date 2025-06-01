@@ -26,11 +26,8 @@ main() {
 		rm $MIST/"$OUT"
 	fi
 
-	printf "Ces MRA pointent vers un fichier mame non Merged dans /Games/mame ou /Games/hbmame:\n">"$MIST/$OUT"
-    printf "\n">>"$MIST/$OUT"
-    printf ".\n"
-    printf "Verification des MRA en cours ....\n"
-    printf ".\n"
+	printf "Ces MRA pointent vers des sets MAME non merged (plusieurs fichiers .zip présents dans /Games/mame ou /Games/hbmame) :\n\n" > "$MIST/$OUT"
+    printf ".\nVérification des MRA en cours...\n.\n"
 	MRASearch
 }
 
@@ -63,7 +60,7 @@ core() {
 				for mame in "${mames[@]}"; do
 					mame_found=$(find "$DIRM" "$DIRHM" -maxdepth 1 -iname "$mame")
 
-					if [ -n "$mame_found" ] && [[ "$mame_found" != *"qsound.zip"* ]] && [[ "$mame_found" != *"namco"* ]]; then
+					if [ -n "$mame_found" ] && [[ "$mame_found" != *"qsound.zip"* ]] && [[ "$mame_found" != *"namco"* ]] && [[ "$mame_found" != *"targ"* ]] && [[ "$mame_found" != *"fax"* ]]; then
 						((compteur++))
 						mameok+=("${mame_found#/media/fat/Games/}")
 					fi

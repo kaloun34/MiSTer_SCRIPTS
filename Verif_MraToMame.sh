@@ -27,7 +27,9 @@ main() {
 	if [ -f "$MIST/$OUT" ]; then
 		rm "$MIST/$OUT"
 	fi
-    MRASearch
+    printf "Ces MRA référencent des sets MAME absents de /Games/mame et /Games/hbmame :\n\n" > "$MIST/$OUT"
+    printf ".\nVérification des MRA en cours...\n.\n"
+	MRASearch
 }
 
 # Extraction du core
